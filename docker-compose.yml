@@ -3,6 +3,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+    image: ${DOCKERHUB_USERNAME}/todo-frontend:latest
     ports:
       - "8080:80"
     depends_on:
@@ -12,6 +13,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    image: ${DOCKERHUB_USERNAME}/todo-backend:latest
     volumes:
       - sqlite-data:/data
     expose:
